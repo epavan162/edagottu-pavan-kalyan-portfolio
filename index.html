@@ -1,793 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavan Kalyan | Full Stack Developer</title>
+  <meta name="description" content="Edagottu Pavan Kalyan — Full Stack Developer. Frontend-focused (React, Vite) with backend experience in Python (Django, FastAPI). Based in Bengaluru." />
+  <meta name="keywords" content="Pavan Kalyan, Edagottu Pavan Kalyan, Full Stack Developer, React, Django, Python, Bengaluru" />
+  <meta name="author" content="Edagottu Pavan Kalyan" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://edagottu-pavan-kalyan-portfolio.netlify.app/" />
+  <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pavan Kalyan | Full Stack Developer" />
+  <meta property="og:description" content="Frontend-focused Full Stack Developer. React, Python (Django & FastAPI). Based in Bengaluru." />
+  <meta property="og:url" content="https://edagottu-pavan-kalyan-portfolio.netlify.app/" />
+  <meta property="og:image" content="https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pavan Kalyan | Full Stack Developer" />
+  <meta name="twitter:description" content="Frontend-focused Full Stack Developer. React, Python (Django & FastAPI). Based in Bengaluru." />
+  <meta name="twitter:image" content="https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Source+Code+Pro:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Basic SEO -->
-    <title>Pavan Kalyan | Full Stack Developer</title>
-    <meta
-      name="description"
-      content="Edagottu Pavan Kalyan — Full Stack Developer. Frontend-focused (React, Vite) with backend experience in Python (Django, FastAPI). Based in Bengaluru."
-    />
-    <meta
-      name="keywords"
-      content="Pavan Kalyan, Edagottu Pavan Kalyan, Full Stack Developer, React, Django, Python, Bengaluru"
-    />
-    <meta name="author" content="Edagottu Pavan Kalyan" />
-    <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pavan Kalyan",
+    "alternateName": "Edagottu Pavan Kalyan",
+    "jobTitle": "Full Stack Developer",
+    "worksFor": { "@type": "Organization", "name": "Coffeebeans Consulting" },
+    "url": "https://edagottu-pavan-kalyan-portfolio.netlify.app/",
+    "sameAs": [
+      "https://github.com/epavan162",
+      "https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/",
+      "https://www.instagram.com/_pavan_kalyan_e/"
+    ]
+  }
+  </script>
+</head>
+<body>
 
-    <!-- Canonical (absolute URL for SEO) -->
-    <link
-      rel="canonical"
-      href="https://edagottu-pavan-kalyan-portfolio.netlify.app/"
-    />
-    <!-- Add Favicon -->
-    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
-    <!-- Open Graph (social sharing) - use absolute URL for og:image if available -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pavan Kalyan | Full Stack Developer" />
-    <meta
-      property="og:description"
-      content="Frontend-focused Full Stack Developer. React, Python (Django & FastAPI), OutSystems. Based in Bengaluru."
-    />
-    <meta
-      property="og:url"
-      content="https://edagottu-pavan-kalyan-portfolio.netlify.app/"
-    />
-    <meta
-      property="og:image"
-      content="https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png"
-    />
-    <meta property="og:site_name" content="Pavan Kalyan" />
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise-overlay"></div>
+  <div class="grid-bg"></div>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pavan Kalyan | Full Stack Developer" />
-    <meta
-      name="twitter:description"
-      content="Frontend-focused Full Stack Developer. React, Python (Django & FastAPI), OutSystems. Based in Bengaluru."
-    />
-    <meta
-      name="twitter:image"
-      content="https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png"
-    />
-
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome (stable jsDelivr) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
-      crossorigin="anonymous"
-    />
-
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- JSON-LD structured data for Person & Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Person",
-            "name": "Pavan Kalyan",
-            "alternateName": "Edagottu Pavan Kalyan",
-            "jobTitle": "Full Stack Developer",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Coffeebeans Consulting"
-            },
-            "url": "https://edagottu-pavan-kalyan-portfolio.netlify.app/",
-            "image": "https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png",
-            "sameAs": [
-              "https://github.com/epavan162",
-              "https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/",
-              "https://www.instagram.com/_pavan_kalyan_e/"
-            ],
-            "description": "Frontend-focused Full Stack Developer skilled in React and building backend APIs with Python (Django, FastAPI). Based in Bengaluru, India."
-          },
-          {
-            "@type": "Organization",
-            "name": "Edagottu Pavan Kalyan",
-            "url": "https://edagottu-pavan-kalyan-portfolio.netlify.app/",
-            "logo": "https://edagottu-pavan-kalyan-portfolio.netlify.app/assets/profile-pic.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+919490131185",
-              "contactType": "customer service",
-              "email": "epavan162@gmail.com",
-              "areaServed": "IN",
-              "availableLanguage": "English"
-            }
-          }
-        ]
-      }
-    </script>
-    <!-- end JSON-LD -->
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-      <div class="nav-container">
-        <div class="logo">PAVAN</div>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Toggle menu"
-          role="button"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-bracket">[</span><span class="logo-text">pavan.dev</span><span class="logo-bracket">]</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active"><span class="nav-num">01.</span>Home</a></li>
+        <li><a href="#about"><span class="nav-num">02.</span>About</a></li>
+        <li><a href="#experience"><span class="nav-num">03.</span>Experience</a></li>
+        <li><a href="#projects"><span class="nav-num">04.</span>Projects</a></li>
+        <li><a href="#achievements"><span class="nav-num">05.</span>Achievements</a></li>
+        <li><a href="#contact"><span class="nav-num">06.</span>Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="assets/Pavan_Kalyan_Edagottu_Resume_2026.pdf" class="nav-resume-btn" download>
+          <i class="fas fa-download"></i> Resume
+        </a>
+        <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button">
+          <span></span><span></span><span></span>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-tag">👋 Welcome to my portfolio</div>
-          <h1>Hi, I'm <span class="gradient-text">Pavan Kalyan</span></h1>
-          <p class="hero-description">
-            I am a passionate Full Stack Developer with a robust understanding
-            of front-end technologies and a growing skill set in back-end
-            development. I specialize in creating functional and elegant digital
-            solutions using a variety of technologies.
-          </p>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">DEVELOPER</div>
+    <div class="hero-container">
 
-          <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">
-              Let's Talk <i class="fas fa-arrow-right" aria-hidden="true"></i>
-            </a>
-            <a
-              href="assets/Pavan_Kalyan_Resume.pdf"
-              class="btn btn-secondary"
-              download
-            >
-              <i class="fas fa-download" aria-hidden="true"></i> Resume
-            </a>
-          </div>
-
-          <div class="social-links">
-            <a
-              href="https://github.com/epavan162"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              ><i class="fab fa-github" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/_pavan_kalyan_e/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram" aria-hidden="true"></i
-            ></a>
-            <a href="mailto:epavan162@gmail.com" aria-label="Email">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-            </a>
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Available for opportunities</span>
+        </div>
+        <div class="hero-greeting">Hello, World! 👋</div>
+        <h1 class="hero-title">
+          I'm <span class="name-highlight">Pavan</span><br>
+          <span class="title-line">Kalyan</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="role-prefix">~ </span>
+          <div class="roles-wrapper">
+            <span class="role active">Full Stack Developer</span>
+            <span class="role">React Developer</span>
+            <span class="role">Python Developer</span>
+            <span class="role">Problem Solver</span>
           </div>
         </div>
-
-        <div class="hero-image">
-          <div class="image-wrapper">
-            <img src="assets/profile1.png" alt="Pavan Kalyan" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-header">
-        <div class="section-tag">About Me</div>
-        <h2 class="section-title">Who I Am</h2>
-        <p class="section-description">
-          Passionate developer with a drive to create meaningful digital
-          experiences
+        <p class="hero-description">
+          I am a passionate Full Stack Developer with a robust understanding of front-end technologies and a growing skill set in back-end development. I specialize in creating functional and elegant digital solutions using a variety of technologies.
         </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a Full Stack Developer at Coffeebeans Consulting in Bengaluru,
-            working mainly on frontend features and supporting backend
-            development where required.
-          </p>
-          <p>
-            I primarily work on frontend development using React.js, while also
-            contributing to backend tasks with Python (Django) and FastAPI. I'm
-            passionate about building practical solutions, solving real
-            problems, and continuously improving my skills.
-          </p>
-          <p>
-            I've solved 250+ coding problems across platforms and hold
-            certifications in Python, JavaScript, and web development. My goal
-            is to work on meaningful projects that make a real difference.
-          </p>
-          <p>
-            I have a solid foundation in core programming languages like C, C++,
-            Java, and Python, which helps me quickly understand new technologies
-            and adapt to different development environments. This strong base
-            makes learning and working with modern tools much easier and more
-            effective for me.
-          </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary-hero">
+            <span>Let's Talk</span>
+            <div class="btn-arrow"><i class="fas fa-arrow-right"></i></div>
+          </a>
+          <a href="assets/Pavan_Kalyan_Edagottu_Resume_2026.pdf" class="btn-outline-hero" download>
+            <i class="fas fa-download"></i> Resume
+          </a>
         </div>
-
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">Vite</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">HTML/CSS</span>
-              <span class="skill-tag">Bootstrap</span>
-              <span class="skill-tag">Flexbox</span>
-              <span class="skill-tag">CSS Grid</span>
-
-              <span class="skill-tag">Responsive Web Design</span>
-            </div>
+        <div class="hero-socials">
+          <a href="https://github.com/epavan162" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/_pavan_kalyan_e/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:epavan162@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">250+</span>
+            <span class="stat-label">Problems Solved</span>
           </div>
-
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Django</span>
-              <span class="skill-tag">FastAPI</span>
-              <span class="skill-tag">Node.js(Familiar)</span>
-              <span class="skill-tag">REST APIs</span>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">8+</span>
+            <span class="stat-label">Projects Built</span>
           </div>
-
-          <div class="skill-category">
-            <h3>Tools & Platforms</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">OutSystems (Low-Code)</span>
-              <span class="skill-tag">Git/GitHub</span>
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Netlify</span>
-              <span class="skill-tag">GitHub Pages</span>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Certifications</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="section-header">
-        <div class="section-tag">Career Journey</div>
-        <h2 class="section-title">Work Experience</h2>
-        <p class="section-description">
-          My professional journey and key achievements
-        </p>
+      <div class="hero-right">
+        <div class="profile-frame">
+          <div class="profile-outer-ring"></div>
+          <div class="profile-inner-ring"></div>
+          <div class="profile-img-wrap">
+            <img src="assets/profile1.png" alt="Pavan Kalyan" class="profile-img" />
+          </div>
+          
+        </div>
+        <div class="code-snippet">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-file">pavan.ts</span>
+          </div>
+          <pre class="code-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"Pavan Kalyan"</span>,
+  <span class="c-key">role</span>: <span class="c-str">"Full Stack Dev"</span>,
+  <span class="c-key">stack</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"Go"</span>],
+  <span class="c-key">location</span>: <span class="c-str">"Bengaluru 📍"</span>,
+  <span class="c-key">available</span>: <span class="c-bool">true</span>
+};</code></pre>
+        </div>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-title">
-                Software Development Engineer - L1
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-pad">
+    <div class="section-container">
+      <div class="section-label">
+        <span class="label-num">02</span><span class="label-line"></span><span class="label-text">ABOUT ME</span>
+      </div>
+      <div class="about-layout">
+
+        <div class="about-intro">
+          <h2 class="section-heading">Who I Am<span class="heading-dot">.</span></h2>
+          <p class="about-para">I'm a <strong>Full Stack Developer</strong> at Coffeebeans Consulting in Bengaluru, working mainly on frontend features and supporting backend development where required.</p>
+          <p class="about-para">I primarily work on frontend development using <strong>React.js</strong>, while also contributing to backend tasks with <strong>Python (Django) and FastAPI</strong>. I'm passionate about building practical solutions, solving real problems, and continuously improving my skills.</p>
+          <p class="about-para">I've solved <strong>250+ coding problems</strong> across platforms and hold certifications in Python, JavaScript, and web development. My goal is to work on meaningful projects that make a real difference.</p>
+          <p class="about-para">I have a solid foundation in core programming languages like <strong>C, C++, Java, and Python</strong>, which helps me quickly understand new technologies and adapt to different development environments.</p>
+          <p class="about-para">Software Engineer with experience building <strong>web and mobile applications</strong> using modern technologies. I enjoy working across different tech stacks and learning new tools quickly. I aim to contribute to impactful projects while continuously improving my technical and problem-solving skills.</p>
+          <div class="about-badges">
+            <div class="about-badge"><i class="fas fa-map-marker-alt"></i> Bengaluru, India</div>
+            <div class="about-badge"><i class="fas fa-briefcase"></i> Coffeebeans Consulting</div>
+            <div class="about-badge"><i class="fas fa-graduation-cap"></i> B.Tech CSE</div>
+          </div>
+        </div>
+
+        <!-- SKILLS — clean categorized, no tabs -->
+        <div class="skills-panel">
+          <div class="skills-panel-header">
+            <i class="fas fa-code"></i> What I Work With
+          </div>
+          <div class="skills-body">
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#a78bfa"></span>Languages</div>
+              <div class="sg-chips">
+                <span>TypeScript</span><span>JavaScript</span><span>Go (Golang)</span>
+                <span>Python</span><span>C</span><span>C++</span><span>Java</span>
               </div>
-              <div class="timeline-company">Coffeebeans Consulting</div>
             </div>
-            <div class="timeline-date">May 2025 - Present</div>
-          </div>
-          <div class="timeline-description">
-            <ul>
-              <li>
-                Built and deployed reactive web and mobile applications using
-                OutSystems low-code platform
-              </li>
-              <li>
-                Integrated external systems via REST APIs using ODC Studio
-              </li>
-              <li>
-                Optimized business logic and UI patterns within OutSystems
-              </li>
-              <li>
-                Created entities, aggregates, and business logic to support app
-                features
-              </li>
-              <li>
-                Contributed to FastAPI backend with feature updates and bug
-                fixes
-              </li>
-            </ul>
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#4ac78d"></span>Frontend</div>
+              <div class="sg-chips">
+                <span class="hi">React.js</span><span class="hi">React Native</span><span>Expo</span>
+                <span class="hi">Vite</span><span>JavaScript</span><span>HTML / CSS</span>
+                <span>Bootstrap</span><span>Flexbox</span><span>CSS Grid</span>
+                <span>Responsive Design</span><span>Zustand</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#00d4ff"></span>Backend</div>
+              <div class="sg-chips">
+                <span class="hi">Django</span><span class="hi">FastAPI</span>
+                <span>Node.js</span><span>Golang (Gin)</span>
+                <span>Django REST Framework</span><span>REST APIs</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#f59e0b"></span>Database</div>
+              <div class="sg-chips">
+                <span>PostgreSQL</span><span>MySQL</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#f87171"></span>DevOps &amp; Tools</div>
+              <div class="sg-chips">
+                <span>Docker</span><span>Docker Compose</span><span>Git</span>
+                <span>GitHub</span><span>GitHub Actions</span><span>AWS</span>
+                <span>Netlify</span><span>GitHub Pages</span><span>VS Code</span>
+                <span>OutSystems</span><span>ODC Studio</span><span>Nx Monorepo</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="sg-label"><span class="sg-dot" style="--c:#818cf8"></span>Other</div>
+              <div class="sg-chips">
+                <span>JWT</span><span>Google OAuth 2.0</span><span>Slack API</span><span>RBAC</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-pad">
+    <div class="section-container">
+      <div class="section-label">
+        <span class="label-num">03</span><span class="label-line"></span><span class="label-text">EXPERIENCE &amp; EDUCATION</span>
+      </div>
+      <h2 class="section-heading">Career Journey<span class="heading-dot">.</span></h2>
+
+      <div class="exp-layout">
+        <div class="exp-timeline">
+
+          <div class="exp-card reveal">
+            <div class="exp-card-top">
+              <div class="exp-company-info">
+                <div class="exp-company-logo"><i class="fas fa-coffee"></i></div>
+                <div>
+                  <div class="exp-role">Software Development Engineer — L1</div>
+                  <div class="exp-company">Coffeebeans Consulting</div>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <div class="exp-date"><i class="far fa-calendar-alt"></i> May 2025 – Present</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div>
+                <span class="exp-badge current">Current</span>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Developed web UI for an enterprise <strong>staffing and resource management platform</strong> using React.js and contributed to backend using Django.</li>
+              <li>Worked on a <strong>predictive maintenance platform</strong> — built frontend screens using OutSystems and supported backend with FastAPI.</li>
+              <li>Developed web apps using <strong>React.js</strong> and mobile apps using <strong>React Native with Expo</strong>.</li>
+              <li>Contributed to backend services built using <strong>Golang (Gin framework)</strong>.</li>
+              <li>Designed and implemented <strong>REST APIs</strong> for business logic and data exchange.</li>
+              <li>Built <strong>Slack bots</strong> using Node.js and Slack APIs to automate reminders and internal notifications.</li>
+              <li>Integrated external systems via REST APIs using <strong>ODC Studio</strong>; optimized business logic and UI patterns within OutSystems.</li>
+              <li>Collaborated with cross-functional teams to deliver scalable and secure applications.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>React.js</span><span>Django</span><span>FastAPI</span><span>React Native</span>
+              <span>Golang</span><span>OutSystems</span><span>Node.js</span><span>Slack API</span>
+            </div>
+          </div>
+
+          <div class="exp-card reveal">
+            <div class="exp-card-top">
+              <div class="exp-company-info">
+                <div class="exp-company-logo intern"><i class="fas fa-code"></i></div>
+                <div>
+                  <div class="exp-role">SDE Intern</div>
+                  <div class="exp-company">Coffeebeans Consulting</div>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <div class="exp-date"><i class="far fa-calendar-alt"></i> Feb 2025 – Apr 2025</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div>
+                <span class="exp-badge">Internship</span>
+              </div>
+            </div>
+            <ul class="exp-list">
+              <li>Worked on enterprise <strong>staffing and resource management platform</strong>.</li>
+              <li>Developed and consumed <strong>REST APIs</strong> using Django REST Framework.</li>
+              <li>Built frontend features using <strong>React.js, Vite, Zustand</strong>, and Nx monorepo.</li>
+              <li>Developed features for <strong>talent allocation, client/project modules</strong>, and asset tracking.</li>
+              <li>Implemented new features and fixed bugs across frontend and backend systems.</li>
+              <li>Collaborated closely with the engineering team to improve <strong>code quality, system usability</strong>, and overall performance.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>React.js</span><span>Vite</span><span>Zustand</span><span>Django REST</span><span>Nx Monorepo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar: Education + Certifications -->
+        <div class="education-aside">
+
+          <div class="aside-section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+
+          <div class="edu-card reveal">
+            <div class="edu-year">2021 – 2024</div>
+            <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
+            <div class="edu-school">Sree Vidyanikethan Engineering College</div>
+            <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Tirupati, Andhra Pradesh</div>
+            <div class="edu-score">CGPA: 8.69</div>
+          </div>
+
+          <div class="edu-card reveal">
+            <div class="edu-year">2018 – 2021</div>
+            <div class="edu-degree">Diploma in Computer Engineering</div>
+            <div class="edu-school">Sri Venkateswara Government Polytechnic</div>
+            <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Tirupati, Andhra Pradesh</div>
+            <div class="edu-score">76.86%</div>
+          </div>
+
+          <div class="aside-section-title" style="margin-top:2.5rem;"><i class="fas fa-certificate"></i> Certifications</div>
+
+          <div class="cert-mini-card reveal">
+            <div class="cert-mini-icon"><i class="fab fa-python"></i></div>
             <div>
-              <div class="timeline-title">SDE Intern</div>
-              <div class="timeline-company">Coffeebeans Consulting</div>
+              <div class="cert-mini-title">Python For Beginners</div>
+              <div class="cert-mini-sub">Udemy · Completed Nov 2022</div>
             </div>
-            <div class="timeline-date">Feb 2025 - May 2025</div>
           </div>
-          <div class="timeline-description">
-            <ul>
-              <li>
-                Worked on enterprise staffing and resource management platform
-              </li>
-              <li>
-                Built and consumed RESTful APIs using Django REST Framework
-              </li>
-              <li>
-                Developed features for talent allocation, client/project
-                modules, and asset tracking
-              </li>
-              <li>Worked with React.js, Vite, Zustand, and Nx monorepo</li>
-              <li>
-                Collaborated with engineering team to improve code quality and
-                system performance
-              </li>
-            </ul>
+          <div class="cert-mini-card reveal">
+            <div class="cert-mini-icon code"><i class="fas fa-code"></i></div>
+            <div>
+              <div class="cert-mini-title">HTML, CSS, JavaScript</div>
+              <div class="cert-mini-sub">Udemy · Completed Jul 2024</div>
+            </div>
           </div>
+          <div class="cert-mini-card reveal">
+            <div class="cert-mini-icon data"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <div class="cert-mini-title">Python 101 for Data Science</div>
+              <div class="cert-mini-sub">Cognitive Class · Completed Oct 2022</div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Education Section -->
-    <section id="education">
-      <div class="section-header">
-        <div class="section-tag">Education</div>
-        <h2 class="section-title">Academic Background</h2>
-        <p class="section-description">
-          My formal education and academic achievements
-        </p>
+  <!-- PROJECTS -->
+  <section id="projects" class="section-pad">
+    <div class="section-container">
+      <div class="section-label">
+        <span class="label-num">04</span><span class="label-line"></span><span class="label-text">PROJECTS</span>
       </div>
-
-      <div class="education-grid">
-        <!-- B.Tech Card -->
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-          </div>
-          <h3 class="education-degree">
-            B.Tech in Computer Science & Engineering
-          </h3>
-          <p class="education-college">
-            Sree Vidyanikethan Engineering College
-          </p>
-          <p class="education-meta">2021 – 2024 • Tirupati, Andhra Pradesh</p>
-          <p class="education-score">Percentage: <span>82.27%</span></p>
-        </div>
-
-        <!-- Diploma Card -->
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-university" aria-hidden="true"></i>
-          </div>
-          <h3 class="education-degree">Diploma in Computer Engineering</h3>
-          <p class="education-college">
-            Sri Venkateswara Government Polytechnic
-          </p>
-          <p class="education-meta">2018 – 2021 • Tirupati, Andhra Pradesh</p>
-          <p class="education-score">Percentage: <span>76.86%</span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-header">
-        <div class="section-tag">My Work</div>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-description">
-          Showcasing my best work and technical capabilities
-        </p>
-      </div>
+      <h2 class="section-heading">Featured Work<span class="heading-dot">.</span></h2>
+      <p class="section-sub">Showcasing my best work and technical capabilities</p>
 
       <div class="projects-grid">
-        <!-- Amazon Web Scraper -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-box-open" aria-hidden="true"></i>
+
+        <div class="project-card featured reveal">
+          <div class="project-card-inner">
+            <div class="project-number">01</div>
+            <div class="project-top">
+              <div class="project-icon-wrap"><i class="fab fa-google"></i></div>
+              <div class="project-links-wrap">
+                <a href="https://github.com/epavan162/Google-OAuth-Login-System" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
+              </div>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/Amazon-Web-Scraping"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
+            <div class="project-featured-label">⭐ Featured</div>
+            <h3 class="project-title">Google OAuth Login System</h3>
+            <p class="project-desc">Full-stack authentication system powered by Google OAuth 2.0 enabling secure login without traditional password storage. Implemented JWT-based authentication using HTTP-only cookies, profile management features, and public profile sharing with a responsive and modern user interface.</p>
+            <div class="project-tech-stack">
+              <span>React</span><span>TypeScript</span><span>Go (Gin)</span><span>PostgreSQL</span><span>Docker</span><span>JWT</span>
             </div>
           </div>
-          <div class="project-content">
+        </div>
+
+        <div class="project-card featured reveal">
+          <div class="project-card-inner">
+            <div class="project-number">02</div>
+            <div class="project-top">
+              <div class="project-icon-wrap"><i class="fas fa-building"></i></div>
+              <div class="project-links-wrap">
+                <a href="https://github.com/epavan162/NESTIFY" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-featured-label">⭐ Featured</div>
+            <h3 class="project-title">Nestify — Apartment Management</h3>
+            <p class="project-desc">Multi-tenant apartment management web app with role-based dashboards, maintenance billing, complaint tracking, and visitor management. Designed REST APIs and relational database schema, implemented JWT authentication with Google OAuth support, and built a responsive UI for seamless experience across devices.</p>
+            <div class="project-tech-stack">
+              <span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">03</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fas fa-box-open"></i></div>
+              <a href="https://github.com/epavan162/Amazon-Web-Scraping" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
+            </div>
             <h3 class="project-title">Amazon Web Scraper</h3>
-            <p class="project-description">
-              Python-based web scraping tool to gather product information from
-              Amazon including title, price, rating, reviews, and availability
-              for analysis.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">BeautifulSoup</span>
-              <span class="tech-tag">Web Scraping</span>
+            <p class="project-desc">Python-based web scraping tool to gather product information from Amazon including title, price, rating, reviews, and availability for analysis.</p>
+            <div class="project-tech-stack">
+              <span>Python</span><span>BeautifulSoup</span><span>Web Scraping</span>
             </div>
           </div>
         </div>
 
-        <!-- Image Search App -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-image" aria-hidden="true"></i>
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">04</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fas fa-image"></i></div>
+              <a href="https://github.com/epavan162/Image-Search-App" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/Image-Search-App"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-          <div class="project-content">
             <h3 class="project-title">Image Search App</h3>
-            <p class="project-description">
-              Dynamic web application for searching and displaying
-              high-resolution images using Unsplash API with responsive design
-              and direct download options.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Unsplash API</span>
-              <span class="tech-tag">HTML/CSS</span>
+            <p class="project-desc">Dynamic web application for searching and displaying high-resolution images using Unsplash API with responsive design and direct download options.</p>
+            <div class="project-tech-stack">
+              <span>JavaScript</span><span>Unsplash API</span><span>HTML/CSS</span>
             </div>
           </div>
         </div>
 
-        <!-- Social Media Data Retrieval -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-database" aria-hidden="true"></i>
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">05</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fab fa-instagram"></i></div>
+              <a href="https://github.com/epavan162/User-Data-Retrieval-from-social-media-platform" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/User-Data-Retrieval-from-social-media-platform"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-          <div class="project-content">
             <h3 class="project-title">Social Media Data Retrieval</h3>
-            <p class="project-description">
-              Python script using Instaloader to fetch public data from
-              Instagram including profile info, posts, and follower counts for
-              data analysis and insights.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Instaloader</span>
-              <span class="tech-tag">Data Analysis</span>
+            <p class="project-desc">Python script using Instaloader to fetch public data from Instagram including profile info, posts, and follower counts for data analysis and insights.</p>
+            <div class="project-tech-stack">
+              <span>Python</span><span>Instaloader</span><span>Data Analysis</span>
             </div>
           </div>
         </div>
 
-        <!-- Job Application Portal -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-briefcase" aria-hidden="true"></i>
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">06</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fas fa-briefcase"></i></div>
+              <a href="https://github.com/epavan162/Job-Application" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/Job-Application"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-          <div class="project-content">
             <h3 class="project-title">Job Application Portal</h3>
-            <p class="project-description">
-              Simple job application frontend with responsive user interface,
-              providing seamless experience for job seekers across all devices.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">Responsive Design</span>
+            <p class="project-desc">Simple job application frontend with responsive user interface providing seamless experience for job seekers across all devices.</p>
+            <div class="project-tech-stack">
+              <span>HTML</span><span>CSS</span><span>Responsive Design</span>
             </div>
           </div>
         </div>
 
-        <!-- Content Management Tool -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-code" aria-hidden="true"></i>
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">07</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fas fa-file-code"></i></div>
+              <a href="https://github.com/epavan162/Content-Management-Tool" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/Content-Management-Tool"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-          <div class="project-content">
             <h3 class="project-title">Content Management Tool</h3>
-            <p class="project-description">
-              Simple content management system developed during internship,
-              featuring static site generation and easy content updates.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
+            <p class="project-desc">Simple content management system developed during internship featuring static site generation and easy content updates.</p>
+            <div class="project-tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
           </div>
         </div>
 
-        <!-- Todo Application -->
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-list-check" aria-hidden="true"></i>
+        <div class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-number">08</div>
+            <div class="project-top">
+              <div class="project-icon-wrap sm"><i class="fas fa-list-check"></i></div>
+              <a href="https://github.com/epavan162/Octanet-Services-Pvt-Ltd---Web-Development-Internship/tree/main/ToDo" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i></a>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/epavan162/Octanet-Services-Pvt-Ltd---Web-Development-Internship/tree/main/ToDo"
-                target="_blank"
-                class="project-link"
-                ><i class="fab fa-github" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-          <div class="project-content">
             <h3 class="project-title">Todo Application</h3>
-            <p class="project-description">
-              Interactive todo list application with add, edit, delete
-              functionality and local storage persistence for managing daily
-              tasks efficiently.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
+            <p class="project-desc">Interactive todo list application with add, edit, and delete functionality and local storage persistence for managing daily tasks efficiently.</p>
+            <div class="project-tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
           </div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements">
-      <div class="section-header">
-        <div class="section-tag">Milestones</div>
-        <h2 class="section-title">Achievements</h2>
-        <p class="section-description">
-          Recognition and accomplishments throughout my journey
-        </p>
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section-pad">
+    <div class="section-container">
+      <div class="section-label">
+        <span class="label-num">05</span><span class="label-line"></span><span class="label-text">ACHIEVEMENTS</span>
       </div>
+      <h2 class="section-heading">Milestones<span class="heading-dot">.</span></h2>
+      <p class="section-sub">Recognition and accomplishments throughout my journey</p>
 
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <div class="achievement-icon">
-            <i class="fas fa-code" aria-hidden="true"></i>
+      <div class="achievements-row">
+
+        <div class="ach-card reveal">
+          <div class="ach-glow"></div>
+          <div class="ach-icon"><i class="fas fa-terminal"></i></div>
+          <div class="ach-num-wrap">
+            <span class="ach-num counter" data-target="250">0</span><span class="ach-plus">+</span>
           </div>
-          <div class="achievement-content">
-            <h3 class="achievement-number">250+</h3>
-            <p class="achievement-text">Coding Problems Solved</p>
-            <p class="achievement-description">
-              Across HackerRank, LeetCode, and CodeChef platforms
-            </p>
-          </div>
+          <div class="ach-label">Coding Problems Solved</div>
+          <div class="ach-desc">Across HackerRank, LeetCode, and CodeChef platforms</div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">
-            <i class="fas fa-award" aria-hidden="true"></i>
+        <div class="ach-card special reveal">
+          <div class="ach-glow"></div>
+          <div class="ach-icon special"><i class="fas fa-medal"></i></div>
+          <div class="ach-num-wrap">
+            <span class="ach-num merit">Merit</span>
           </div>
-          <div class="achievement-content">
-            <h3 class="achievement-number">Letter of Merit</h3>
-            <p class="achievement-text">Cisco Networking Academy</p>
-            <p class="achievement-description">
-              Signed by Cisco CEO for scoring over 76% in CCNA final exam
-            </p>
-          </div>
+          <div class="ach-label">Letter of Merit — Cisco</div>
+          <div class="ach-desc">Signed by Cisco CEO for scoring over 76% in CCNA final exam at Cisco Networking Academy</div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">
-            <i class="fas fa-certificate" aria-hidden="true"></i>
+        <div class="ach-card reveal">
+          <div class="ach-glow"></div>
+          <div class="ach-icon"><i class="fas fa-certificate"></i></div>
+          <div class="ach-num-wrap">
+            <span class="ach-num counter" data-target="5">0</span><span class="ach-plus">+</span>
           </div>
-          <div class="achievement-content">
-            <h3 class="achievement-number">5+</h3>
-            <p class="achievement-text">Professional Certifications</p>
-            <p class="achievement-description">
-              In Python, Web Development, and Data Science
-            </p>
-          </div>
+          <div class="ach-label">Professional Certifications</div>
+          <div class="ach-desc">In Python, Web Development, and Data Science</div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications">
-      <div class="section-header">
-        <div class="section-tag">Credentials</div>
-        <h2 class="section-title">Certifications</h2>
-        <p class="section-description">
-          Professional certifications and completed courses
-        </p>
+  <!-- CONTACT -->
+  <section id="contact" class="section-pad">
+    <div class="section-container">
+      <div class="section-label">
+        <span class="label-num">06</span><span class="label-line"></span><span class="label-text">CONTACT</span>
       </div>
+      <div class="contact-layout">
 
-      <div class="certifications-grid">
-        <div class="certification-card">
-          <div class="cert-header">
-            <div class="cert-logo">
-              <i class="fab fa-python" aria-hidden="true"></i>
+        <div class="contact-left">
+          <h2 class="section-heading">Let's Work<br>Together<span class="heading-dot">.</span></h2>
+          <p class="contact-sub">Have a project or opportunity? Feel free to reach out!</p>
+          <div class="contact-info-list">
+            <a href="mailto:epavan162@gmail.com" class="contact-info-item reveal">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">Email</span>
+                <span class="ci-value">epavan162@gmail.com</span>
+              </div>
+              <i class="fas fa-arrow-right ci-arrow"></i>
+            </a>
+            <a href="tel:+919490131185" class="contact-info-item reveal">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">Phone</span>
+                <span class="ci-value">+91 9490131185</span>
+              </div>
+              <i class="fas fa-arrow-right ci-arrow"></i>
+            </a>
+            <div class="contact-info-item no-link reveal">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Bengaluru, Karnataka, India</span>
+              </div>
             </div>
-            <div class="cert-badge">
-              <i class="fas fa-check-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Python For Beginners</h3>
-            <p class="cert-provider">Udemy</p>
-            <p class="cert-date">Completed November 2022</p>
           </div>
         </div>
 
-        <div class="certification-card">
-          <div class="cert-header">
-            <div class="cert-logo">
-              <i class="fas fa-code" aria-hidden="true"></i>
+        <div class="contact-right reveal">
+          <div class="contact-card">
+            <p class="contact-card-title">// reach out via</p>
+            <div class="contact-btn-group">
+              <a href="https://wa.me/919490131185?text=Hi%20Pavan%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity%20with%20you." target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp">
+                <i class="fab fa-whatsapp"></i><span>Message on WhatsApp</span><i class="fas fa-external-link-alt btn-ext"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin">
+                <i class="fab fa-linkedin-in"></i><span>Connect on LinkedIn</span><i class="fas fa-external-link-alt btn-ext"></i>
+              </a>
+              <a href="mailto:epavan162@gmail.com" class="contact-btn email">
+                <i class="fas fa-envelope"></i><span>Send an Email</span><i class="fas fa-external-link-alt btn-ext"></i>
+              </a>
             </div>
-            <div class="cert-badge">
-              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <div class="contact-social-row">
+              <a href="https://github.com/epavan162" target="_blank" rel="noopener noreferrer" class="cs-btn"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/" target="_blank" rel="noopener noreferrer" class="cs-btn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/_pavan_kalyan_e/" target="_blank" rel="noopener noreferrer" class="cs-btn"><i class="fab fa-instagram"></i></a>
+              <a href="mailto:epavan162@gmail.com" class="cs-btn"><i class="fas fa-envelope"></i></a>
             </div>
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">HTML, CSS, JavaScript</h3>
-            <p class="cert-provider">Udemy</p>
-            <p class="cert-date">Completed July 2024</p>
           </div>
         </div>
 
-        <div class="certification-card">
-          <div class="cert-header">
-            <div class="cert-logo">
-              <i class="fas fa-chart-line" aria-hidden="true"></i>
-            </div>
-            <div class="cert-badge">
-              <i class="fas fa-check-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Python 101 for Data Science</h3>
-            <p class="cert-provider">Cognitive Class</p>
-            <p class="cert-date">Completed October 2022</p>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="section-header">
-        <div class="section-tag">Get In Touch</div>
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-description">
-          Have a project or opportunity? Feel free to reach out!
-        </p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-bracket">[</span><span class="logo-text">pavan.dev</span><span class="logo-bracket">]</span>
       </div>
-
-      <div class="contact-container">
-        <div class="contact-grid">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-            </div>
-            <h3>Email</h3>
-            <p><a href="mailto:epavan162@gmail.com">epavan162@gmail.com</a></p>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone" aria-hidden="true"></i>
-            </div>
-            <h3>Phone</h3>
-            <p><a href="tel:+919490131185">+91 9490131185</a></p>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-            </div>
-            <h3>Location</h3>
-            <p>
-              <a
-                href="https://en.wikipedia.org/wiki/Bengaluru"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Bengaluru, Karnataka, India</a
-              >
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="cta-buttons"
-          style="margin-top: 3rem; justify-content: center"
-        >
-          <!-- WhatsApp button (opens WhatsApp or WhatsApp Web with a prefilled message) -->
-          <a
-            href="https://wa.me/919490131185?text=Hi%20Pavan%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity%20with%20you."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Message on WhatsApp
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          </a>
-
-          <!-- LinkedIn button (unchanged) -->
-          <a
-            href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-          >
-            <i class="fab fa-linkedin" aria-hidden="true"></i> Connect on
-            LinkedIn
-          </a>
-        </div>
+      <p class="footer-text">&copy; 2025  Pavan Kalyan Edagottu. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/epavan162" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/pavan-kalyan-edagottu-281681236/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/_pavan_kalyan_e/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:epavan162@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Edagottu Pavan Kalyan. All rights reserved.</p>
-    </footer>
-
-    <!-- Scripts (kept as-is so nothing breaks) -->
-    <script src="scripts.js"></script>
-  </body>
+  <script src="scripts.js"></script>
+</body>
 </html>
