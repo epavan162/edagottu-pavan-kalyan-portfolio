@@ -1,0 +1,6 @@
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Point to sitemap
+Sitemap: https://edagottu-pavan-kalyan-portfolio.netlify.app/sitemap.xml
