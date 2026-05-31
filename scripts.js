@@ -166,3 +166,32 @@ if (themeToggle) {
     localStorage.setItem('theme', newTheme);
   });
 }
+
+// ── Email Copy Fallback & Toast Notification ──
+document.querySelectorAll('a[href^="mailto:"]').forEach(emailLink => {
+  emailLink.addEventListener('click', function(e) {
+    const email = 'epavan162@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+      showToast('Email copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy email: ', err);
+    });
+  });
+});
+
+function showToast(message) {
+  let toast = document.getElementById('toastNotification');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toastNotification';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `<i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i> ${message}`;
+  toast.className = 'toast-show';
+  
+  if (window.toastTimeout) clearTimeout(window.toastTimeout);
+  window.toastTimeout = setTimeout(() => {
+    toast.className = '';
+  }, 3000);
+}
+
