@@ -1329,3 +1329,615 @@ html.theme-ready .about-badge {
   }
 }
 
+/* =========================================
+   PAVAN AI — CHATBOT UI STYLES
+   ========================================= */
+
+/* ── Launcher Button ── */
+.pavan-ai-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1990;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-lit);
+  border-radius: 9999px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(var(--accent-rgb), 0.2);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), background-color 0.3s ease;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.pavan-ai-launcher:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22), 0 0 30px rgba(var(--accent-rgb), 0.35);
+  border-color: var(--accent);
+}
+.pavan-ai-launcher.active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+.pavan-ai-launcher-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+.pavan-ai-launcher-text {
+  letter-spacing: 0.01em;
+}
+.pavan-ai-online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-emerald);
+  box-shadow: 0 0 8px var(--c-emerald);
+  margin-left: 2px;
+}
+
+/* ── Floating Teaser Tooltip Bubble ── */
+.pavan-ai-teaser {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  z-index: 1995;
+  max-width: 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-lit);
+  border-radius: 16px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2), 0 0 20px rgba(var(--accent-rgb), 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  animation: pavanAiFloat 3.5s ease-in-out infinite, pavanAiTeaserIn 0.35s var(--ease-out);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+.pavan-ai-teaser.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+}
+.pavan-ai-teaser::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  right: 28px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-lit);
+  border-bottom: 1px solid var(--border-lit);
+  transform: rotate(45deg);
+}
+.pavan-ai-teaser-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text3);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.pavan-ai-teaser-close:hover {
+  color: var(--text);
+  background: var(--line);
+}
+.pavan-ai-teaser-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-right: 12px;
+}
+.pavan-ai-teaser-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--c-purple));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(var(--accent-rgb), 0.25);
+  margin-top: 2px;
+}
+.pavan-ai-teaser-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pavan-ai-teaser-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+.pavan-ai-teaser-text {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--text2);
+  line-height: 1.35;
+  font-weight: 500;
+}
+.pavan-ai-teaser-text strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@keyframes pavanAiFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes pavanAiTeaserIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Chat Window Modal ── */
+.pavan-ai-window {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  z-index: 2000;
+  width: 390px;
+  height: 580px;
+  max-height: calc(85vh - 90px);
+  background: var(--bg-card);
+  border: 1px solid var(--border-lit);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(var(--accent-rgb), 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s ease;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+.pavan-ai-window.hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.pavan-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--line);
+}
+.pavan-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pavan-ai-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--c-purple));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+}
+.pavan-ai-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.pavan-ai-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+.pavan-ai-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: var(--text2);
+  font-family: var(--font-mono);
+}
+.pavan-ai-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-emerald);
+  box-shadow: 0 0 6px var(--c-emerald);
+}
+.pavan-ai-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pavan-ai-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text2);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.85rem;
+}
+.pavan-ai-icon-btn:hover {
+  background: var(--line);
+  color: var(--text);
+}
+
+/* ── Body & Messages ── */
+.pavan-ai-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* ── Welcome Screen ── */
+.pavan-ai-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto 0;
+}
+.pavan-ai-welcome.hidden {
+  display: none;
+}
+.pavan-ai-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.pavan-ai-welcome-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+.pavan-ai-welcome-desc {
+  font-size: 0.83rem;
+  color: var(--text2);
+  margin: 0 0 20px 0;
+  line-height: 1.45;
+}
+.pavan-ai-chips-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text3);
+  margin-bottom: 10px;
+}
+.pavan-ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.pavan-ai-chip {
+  background: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s var(--ease);
+}
+.pavan-ai-chip:hover {
+  background: var(--bg-card);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.12);
+}
+
+/* ── Messages List ── */
+.pavan-ai-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.pavan-ai-messages.hidden {
+  display: none;
+}
+.pavan-ai-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  animation: pavanAiFadeIn 0.25s var(--ease-out);
+}
+@keyframes pavanAiFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.pavan-ai-msg-user {
+  justify-content: flex-end;
+}
+.pavan-ai-msg-user .pavan-ai-msg-bubble {
+  background: linear-gradient(135deg, var(--accent), var(--c-purple));
+  color: #ffffff;
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.2);
+  max-width: 85%;
+  word-break: break-word;
+}
+.pavan-ai-msg-ai {
+  justify-content: flex-start;
+}
+.pavan-ai-msg-ai .pavan-ai-msg-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pavan-ai-msg-ai .pavan-ai-msg-bubble {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 16px 16px 16px 4px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 88%;
+  word-break: break-word;
+}
+
+/* ── AI Formatting ── */
+.pavan-ai-h2, .pavan-ai-h3, .pavan-ai-h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text);
+  margin: 10px 0 6px 0;
+  line-height: 1.25;
+}
+.pavan-ai-h2 { font-size: 1.05rem; }
+.pavan-ai-h3 { font-size: 0.95rem; }
+.pavan-ai-h4 { font-size: 0.88rem; color: var(--accent); }
+
+.pavan-ai-para {
+  margin: 0 0 8px 0;
+}
+.pavan-ai-para:last-child {
+  margin-bottom: 0;
+}
+.pavan-ai-list {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+.pavan-ai-list li {
+  margin-bottom: 4px;
+}
+.pavan-ai-divider {
+  border: none;
+  border-top: 1px solid var(--line-strong);
+  margin: 10px 0;
+}
+.pavan-ai-msg-bubble strong {
+  font-weight: 700;
+  color: var(--text);
+}
+.pavan-ai-msg-bubble em {
+  font-style: italic;
+  color: var(--text2);
+}
+.pavan-ai-inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: rgba(var(--accent-rgb), 0.12);
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.pavan-ai-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ── Typing Indicator ── */
+.pavan-ai-typing .pavan-ai-msg-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+}
+.pavan-ai-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pavanAiPulse 1.2s infinite ease-in-out;
+}
+.pavan-ai-dot:nth-child(2) { animation-delay: 0.2s; }
+.pavan-ai-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pavanAiPulse {
+  0%, 100% { transform: scale(0.6); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ── In-Chat Error State ── */
+.pavan-ai-msg-avatar.error {
+  color: var(--c-amber);
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.08);
+}
+.pavan-ai-msg-bubble.error-bubble {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: var(--text);
+}
+.pavan-ai-retry-btn {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.pavan-ai-retry-btn:hover {
+  background: var(--c-purple);
+  transform: translateY(-1px);
+}
+
+/* ── Footer / Input Bar ── */
+.pavan-ai-footer {
+  padding: 12px 16px;
+  background: var(--bg-elev);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pavan-ai-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: 9999px;
+  padding: 4px 6px 4px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.pavan-ai-form:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.2);
+}
+.pavan-ai-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+.pavan-ai-input::placeholder {
+  color: var(--text3);
+}
+.pavan-ai-send-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-size: 0.8rem;
+}
+.pavan-ai-send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.pavan-ai-send-btn:not(:disabled):hover {
+  transform: scale(1.06);
+  background: var(--c-purple);
+}
+.pavan-ai-footer-note {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text3);
+  text-align: center;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 480px) {
+  .pavan-ai-window {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+  .pavan-ai-launcher {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+

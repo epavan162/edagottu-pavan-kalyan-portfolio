@@ -1,0 +1,9 @@
+# Local environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Node modules / Netlify build artifacts
+node_modules/
+.netlify/
+.DS_Store
