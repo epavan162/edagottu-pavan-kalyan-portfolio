@@ -220,6 +220,7 @@
     hideTeaser(false);
     chatWindow.classList.remove('hidden');
     launcherBtn.classList.add('active');
+    document.body.classList.add('pavan-ai-open');
     setTimeout(() => inputField.focus(), 150);
   }
 
@@ -227,6 +228,7 @@
     isOpen = false;
     chatWindow.classList.add('hidden');
     launcherBtn.classList.remove('active');
+    document.body.classList.remove('pavan-ai-open');
   }
 
   function clearChat() {
